@@ -1,0 +1,9 @@
+# install.packages("partykit")
+# library(partykit)
+
+data("mtcars")
+head(mtcars)
+library(partykit)
+dt <- ctree(mpg ~ cyl + am, data = mtcars)
+dt
+plot(dt)

@@ -1,0 +1,20 @@
+#install package forecast
+
+install.packages('forecast')
+library('forecast')
+class(AirPassengers)
+my_colors<-rainbow(12)
+#Boxplotbymonthwithcustomizations
+boxplot(split(AirPassengers,cycle(AirPassengers)),
+         xlab="Month",ylab="NumberofPassengers",
+         col=my_colors, #Assigncolorstoeachbox
+         border="black", #Setthebordercolor
+         main="MonthlyAirPassengerCountsbyMonth",
+         names=month.abb, #Useabbreviatedmonthnamesaslabels
+         outline=FALSE) #Removeoutliers
+plot(AirPassengers)
+model<-auto.arima(AirPassengers)
+summary(model)
+# h = 10*12 because, forecast is for 10 years for all 12 months
+f<-forecast(model, level=c(95), h=10*12)
+plot(f)

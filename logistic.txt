@@ -1,0 +1,23 @@
+install.packages('sandwich')
+install.packages('party')
+library(party)
+data("mtcars")
+head(mtcars)
+dt=ctree(mpg~cyl+am, data = mtcars)
+dt
+index=sample(1:nrow(mtcars),0.75*nrow(mtcars))
+index
+train=mtcars[index,]
+train
+test=readingSkills[-index,]
+train
+test=mtcars[-index,]
+test
+test=readingSkills[-index,]
+train
+test=mtcars[-index,]
+test
+dt=ctree(mpg~hp+wt, data=train)
+plot(dt)
+dt=ctree(carb~hp+wt, data=train)
+plot(dt)

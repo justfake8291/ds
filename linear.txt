@@ -1,0 +1,31 @@
+data("cars")
+head(cars)
+str(cars)
+dim(cars)
+library(ggplot2)
+ggplot(data=cars,aes(x=speed,y=dist))+geom_point()
+ggplot(data=cars,aes(x=speed,y=dist))+geom_point()+geom_smooth(method="lm")
+ggplot(data=cars,aes(x=speed))+geom_density(aes(group=dist))
+ggplot(data=cars,aes(x=speed))+geom_density(aes(group=dist,fill=dist))
+ggplot(cars,aes(factor(speed),dist))+geom_boxplot()
+install.packages('corrplot')
+library(corrplot)
+corrplot(cor(cars[,1:2],method = "pearson"),diag=TRUE,title="Plot",method= "square",
+          type="lower")
+linmod=lm(cars$speed~cars$dist)
+linmod
+summary(linmod)
+set.seed(100)
+trainingRowIndex=sample(1:nrow(cars),0.8*nrow(cars))
+trainingRowIndex
+train=cars[trainingRowIndex,]
+train
+test=cars[-trainingRowIndex,]
+test
+dim(test)
+dim(train)
+linreg=lm(speed~dist,data=train)
+linreg
+pre=predict(linreg,test)
+pre
+plot(linreg)
