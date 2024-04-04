@@ -1,5 +1,6 @@
 # install.packages("partykit")
 # library(partykit)
+#1output
 
 data("mtcars")
 head(mtcars)
