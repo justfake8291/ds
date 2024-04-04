@@ -1,3 +1,5 @@
+#2outputs
+
 data(iris)
 head(iris)
 scaled_data <- scale(iris[, 1:4])
