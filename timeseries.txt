@@ -1,4 +1,5 @@
 #install package forecast
+#3output
 
 install.packages('forecast')
 library('forecast')
