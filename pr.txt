@@ -1,0 +1,8 @@
+1. Practical of Principal Component Analysis   = component.txt
+2. Practical of Clustering                     = clustering.txt
+3. Practical of time series forecasting        =timeseries.txt
+4. Practical of simple and multiple linear regression    =  linear.txt
+5. Practical of logistic regression       = logistic.txt
+6. Practical of Hypothesis Testing        = hypothesis.txt
+7. Practical of analysis of Variance      = variance.txt
+8. Practical of Decision Tree             =decision.txt
